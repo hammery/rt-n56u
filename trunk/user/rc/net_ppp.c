@@ -394,7 +394,7 @@ launch_wan_pppd(int unit, int wan_proto)
 	if (get_wan_unit_value_int(unit, "ppp_lcp") > 0) {
 		/* echo failures (6*20s) */
 		fprintf(fp, "lcp-echo-interval %d\n", 60);
-		fprintf(fp, "lcp-echo-failure %d\n", 6);
+		fprintf(fp, "lcp-echo-failure %d\n", 10);
 	}
 	if (get_wan_unit_value_int(unit, "ppp_alcp") > 0)
 		fprintf(fp, "lcp-echo-adaptive\n");
